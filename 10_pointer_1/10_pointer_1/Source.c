@@ -1,37 +1,20 @@
-
 #include <stdio.h>
-
-void swap_callbyvalue(int x, int y);
-void swap_callbyreference(int* x, int* y);
 
 int main() {
 	
-	int a = 3;
-	int b = 5;
-	swap_callbyvalue(a, b);
+	int arr[5];
+	int i;
 
-	printf("a: %i, b:%i\n", a, b);
+	for (i = 0; i < 5; i++)
+	{
+		printf("input a value in arr[%d]: ", i);
+		scanf_s("%d", &arr[i]);
+	}
 
-	swap_callbyreference(&a, &b);
-
-	printf("a: %i, b:%i\n", a, b);
+	for (i = 0; i < 5; i++)
+	{
+		printf("arr[%d] = %d\n", i, arr[i]);
+	}
 
 	return 0;
-}
-
-
-void swap_callbyvalue(int x, int y)
-{
-	int temp = 0;
-	temp = x;
-	x = y;
-	y = temp;
-}
-
-void swap_callbyreference(int* x, int* y)
-{
-	int temp = 0;
-	temp = *x;
-	*x = *y;
-	*y = temp;
 }
