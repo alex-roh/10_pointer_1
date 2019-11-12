@@ -1,17 +1,37 @@
 
 #include <stdio.h>
 
+void swap_callbyvalue(int x, int y);
+void swap_callbyreference(int* x, int* y);
+
 int main() {
 	
-	int i = 4;
-	int j = 300;
+	int a = 3;
+	int b = 5;
+	swap_callbyvalue(a, b);
 
-	int* pi = &i;
-	char* pc = &i;
+	printf("a: %i, b:%i\n", a, b);
 
-	char* pj = &j;
+	swap_callbyreference(&a, &b);
 
-	printf("%i, %i, %i, %i\n", i, *pi, *pc, *pj);
+	printf("a: %i, b:%i\n", a, b);
 
 	return 0;
+}
+
+
+void swap_callbyvalue(int x, int y)
+{
+	int temp = 0;
+	temp = x;
+	x = y;
+	y = temp;
+}
+
+void swap_callbyreference(int* x, int* y)
+{
+	int temp = 0;
+	temp = *x;
+	*x = *y;
+	*y = temp;
 }
