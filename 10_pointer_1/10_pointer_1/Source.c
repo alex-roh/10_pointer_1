@@ -3,18 +3,15 @@
 
 int main() {
 	
-	int i = 10;
-	char c = 'a';
+	int i = 4;
+	int j = 300;
 
-	int* iptr = &i;
-	char* cptr = &c;
-	int* iptr2 = iptr;
+	int* pi = &i;
+	char* pc = &i;
 
-	printf("i : %p\naddress of i : %p (size: %i)\n", iptr, &i, sizeof(iptr));
+	char* pj = &j;
 
-	printf("c : %p\naddress of c : %p (size: %i)\n", cptr, &c, sizeof(cptr));
-
-	printf("iptr2 : %p, %i\n", iptr2, *iptr2);
+	printf("%i, %i, %i, %i\n", i, *pi, *pc, *pj);
 
 	return 0;
 }
