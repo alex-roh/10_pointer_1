@@ -3,6 +3,7 @@
 int main() {
 	
 	int arr[5];
+	int* arr_ptr = arr;
 	int average = 0;
 	int i;
 
@@ -15,7 +16,7 @@ int main() {
 	for (i = 0; i < 5; i++)
 	{
 		printf("arr[%d] = %d\n", i, arr[i]);
-		average += arr[i];
+		average += *(arr_ptr + i);
 	}
 
 	printf("average: %d", average/5);
